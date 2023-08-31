@@ -2,7 +2,7 @@ name: git pull
 
 on:
   push:
-    branches: [master]
+    branches: ["master"]
 
 jobs:
   test:
