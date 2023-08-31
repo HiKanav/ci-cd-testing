@@ -11,4 +11,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
+    - name: Take pull
+      run: |
+         ssh administrator@185.229.91.103 'cd /var/www/html/ci-cd-testing && git pull'
 
