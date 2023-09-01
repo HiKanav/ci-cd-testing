@@ -12,12 +12,11 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Deploy to server
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@v0.1.4
       with:
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.FMP_LIVE }}
-        passphrase: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}  # Specify your SSH port if it's not the default (usually 22)
         script: |
           cd /var/www/html/ci-cd-testing
