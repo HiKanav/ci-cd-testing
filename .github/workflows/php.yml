@@ -18,7 +18,7 @@ jobs:
     - name: Deploy to server
       run: ssh administrator@185.229.91.103 'cd /var/www/html/ci-cd-testing && git pull'
       env:
-        FMP_LIVE: ${{ secrets.SSH_PRIVATE_KEY }}
+        FMP_LIVE: ${{ secrets.FMP_LIVE }}
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
