@@ -6,16 +6,21 @@ on:
 
 jobs:
   pull:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
     - name: Deploy to server
-      run: ssh administrator@185.229.91.103 'cd /var/www/html/ci-cd-testing && git pull'
-      env:
-        FMP_LIVE: ${{ secrets.FMP_LIVE }}
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.IP }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}  # Specify your SSH port if it's not the default (usually 22)
+        script: |
+          cd /var/www/html/ci-cd-testing
+          git pull
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
