@@ -19,8 +19,7 @@ jobs:
         password: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}  # Specify your SSH port if it's not the default (usually 22)
         script: |
-          cd /var/www/html/ci-cd-testing
-          git pull
+          cd /var/www/html/ci-cd-testing && git pull
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
