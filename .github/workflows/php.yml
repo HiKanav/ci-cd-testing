@@ -16,7 +16,7 @@ jobs:
       with:
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
-        key: ${{ secrets.FMP_LIVE }}
+        password: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}  # Specify your SSH port if it's not the default (usually 22)
         script: |
           cd /var/www/html/ci-cd-testing
